@@ -1,0 +1,18 @@
+
+
+{% for product in collections.all.products %}
+
+    <p style="
+        {% if forloop.first %}
+         color: red;
+         {% elsif forloop.last %}
+         color: blue;
+         {% endif %}">
+
+    {{ forloop.index}} - {{ product.title }}  </p>
+    <h2>TAGS</h2>
+    {% for tag in product.tags %}
+        <span class="tag">{{ tag }}</span>
+    {% endfor %}
+{% endfor %}
+
